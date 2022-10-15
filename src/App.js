@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import SideBar from './components/sidebar/SideBar';
-import Content from './components/content/Content';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import SideBar from "./components/sidebar/SideBar";
+import Content from "./components/content/Content";
 
 class App extends Component {
-
   constructor(props) {
     super(props);
 
@@ -14,21 +14,21 @@ class App extends Component {
     this.state = {
       isOpen: false,
       isMobile: true,
-    }
+    };
 
     this.previousWidth = -1;
   }
 
   updateWidth() {
-    const width = window.innerWidth
+    const width = window.innerWidth;
     const widthLimit = 576;
-    const isMobile = (width <= widthLimit);
-    const wasMobile = (this.previousWidth <= widthLimit);
+    const isMobile = width <= widthLimit;
+    const wasMobile = this.previousWidth <= widthLimit;
 
     if (isMobile !== wasMobile) {
       this.setState({
-        isOpen: !isMobile
-      })
+        isOpen: !isMobile,
+      });
     }
 
     this.previousWidth = width;
@@ -51,15 +51,14 @@ class App extends Component {
 
   toggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
-  }
-
+  };
 
   render() {
     return (
       <div className="App wrapper">
         <SideBar toggle={this.toggle} isOpen={this.state.isOpen} />
         <Content toggle={this.toggle} isOpen={this.state.isOpen} />
-      </div >
+      </div>
     );
   }
 }

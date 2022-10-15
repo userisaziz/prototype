@@ -36,10 +36,6 @@ a:focus {
   transition: 0.5s;
 }
 
-.sidebar-header {
-  background: #6d7fcc;
-}
-
 .sidebar-header h3 {
   color: #fff;
   padding: 1em;

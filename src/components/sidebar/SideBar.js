@@ -6,7 +6,7 @@ import {
   faPaperPlane,
   faQuestion,
   faImage,
-  faCopy
+  faCopy,
 } from "@fortawesome/free-solid-svg-icons";
 import SubMenu from "./SubMenu";
 import { NavItem, NavLink, Nav } from "reactstrap";
@@ -20,44 +20,43 @@ class SideBar extends React.Component {
           <a color="info" onClick={this.props.toggle} style={{ color: "#fff" }}>
             &times;
           </a>
-          <h3>reacstrap sidebar</h3>
+          <h3>
+            <FontAwesomeIcon icon={faBriefcase} className="mr-2" /> logo
+          </h3>
         </div>
         <Nav vertical className="list-unstyled pb-3">
           <p>Dummy Heading</p>
-          <SubMenu
-            title="Home"
-            icon={faHome}
-            items={["Home 1", "Home 2", "Home 3"]}
-          />
+
           <NavItem>
             <NavLink href="#">
               <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
-              About
+              Dashboard
             </NavLink>
           </NavItem>
-          <SubMenu
-            title="Pages"
-            icon={faCopy}
-            items={["Page 1", "Page 2", "Page 3"]}
-          />
+
           <NavItem>
             <NavLink href="#">
               <FontAwesomeIcon icon={faImage} className="mr-2" />
-              Portfolio
+              Projects
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#">
               <FontAwesomeIcon icon={faQuestion} className="mr-2" />
-              FAQ
+              Earnings
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#">
               <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
-              Contact
+              Profile
             </NavLink>
           </NavItem>
+          <SubMenu
+            title="Support"
+            icon={faCopy}
+            items={["Contact us", "FAQ"]}
+          />
         </Nav>
       </div>
     );
